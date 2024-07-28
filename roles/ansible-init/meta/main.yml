@@ -28,5 +28,4 @@ galaxy_info:
     - rocky_linux
     - centos_stream
     - debian
-    - ubunut
-    - apache
+    - Ubuntu
