@@ -1,10 +1,10 @@
-Role Name
+ansible-init
 =========
 
 Install ansible on managed nodes, so ansible-pull could be used for later automation.
 
-Role Variables
---------------
+Variables
+---------
 
 In [defaults/main.yml](./defaults/main.yml) **"ansible_user"** has been set based on group names in [hosts.yml](../../hosts.yml) file. you can modify it if you would need.
 
@@ -13,7 +13,7 @@ In [defaults/main.yml](./defaults/main.yml) **"ansible_user"** has been set base
 Example Playbook
 ----------------
 
-    - hosts: all
+    - hosts: servers
       roles:
          - ansible-init
 
