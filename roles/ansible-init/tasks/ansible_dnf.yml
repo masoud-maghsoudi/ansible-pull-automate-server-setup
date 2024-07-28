@@ -1,0 +1,21 @@
+- name: Install epel-release
+  ansible.builtin.yum:
+    name: "epel-release"
+    update_cache: yes
+    state: latest
+  when: ansible_distribution != "Fedora"
+
+- name: Update all packages to their latest version
+  ansible.builtin.dnf:
+    name: "*"
+    update_cache: yes
+    state: latest
+
+- name: Install ansible, git, curl
+  ansible.builtin.dnf:
+    name:
+      - ansible
+      - git
+      - curl
+    update_cache: yes
+    state: latest

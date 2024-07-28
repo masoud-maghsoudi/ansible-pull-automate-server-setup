@@ -1,0 +1,4 @@
+---
+# tasks file for ansible-init
+- name: Install Ansilbe
+  include_tasks: ansible_{{ ansible_pkg_mgr }}.yml

@@ -1,0 +1,4 @@
+---
+# tasks file for package-install
+- name: Install a list of packages
+  include_tasks: package_{{ ansible_pkg_mgr }}.yml

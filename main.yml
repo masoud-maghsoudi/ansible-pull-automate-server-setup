@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Run ansible roles
+      ansible.builtin.import_role:
+        name: ansible-init
+
+    - name: Schedule ansible-pull from repository
+      ansible.builtin.cron:
+        name: "ansible-pull schedule"
+        special_time: daily
+        user: root
+        job: "ansible-pull --url https://github.com/masoud-maghsoudi/ansible-pull-automate-server-setup.git"
+        backup: yes

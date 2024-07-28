@@ -1,0 +1,32 @@
+galaxy_info:
+  author: Masoud Maghsoudi
+  description: This ansible role helps to install Ansible on different Linux distributions. It can helps to run ansible-pull commands on servers later on.
+
+  license: MIT
+
+  min_ansible_version: "2.1"
+
+  platforms:
+    - name: EL
+      versions:
+        - "8"
+        - "9"
+    - name: Debian
+      versions:
+        - bullseye
+        - bookworm
+    - name: Ubuntu
+      versions:
+        - focal
+        - jammy
+  galaxy_tags:
+    - ansible
+    - linux
+    - redhat
+    - oracle_linux
+    - alma_linux
+    - rocky_linux
+    - centos_stream
+    - debian
+    - ubunut
+    - apache

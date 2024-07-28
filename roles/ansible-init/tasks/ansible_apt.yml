@@ -1,0 +1,27 @@
+- name: Update all packages to their latest version
+  ansible.builtin.apt:
+    name: "*"
+    update_cache: yes
+    state: latest
+
+- name: Install software-properties-common
+  ansible.builtin.apt:
+    name: "software-properties-common"
+    update_cache: yes
+    state: latest
+  when: ansible_distribution == "Ubuntu"
+
+- name: Add ansible repository from PPA and install its signing key on Ubuntu target
+  ansible.builtin.apt_repository:
+    repo: ppa:ansible/ansible
+    state: present
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install ansible, git, curl
+  ansible.builtin.apt:
+    name:
+      - ansible
+      - git
+      - curl
+    update_cache: yes
+    state: latest

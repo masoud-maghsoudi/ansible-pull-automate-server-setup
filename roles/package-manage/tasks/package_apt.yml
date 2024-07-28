@@ -1,0 +1,16 @@
+- name: Update all packages to their latest version
+  ansible.builtin.apt:
+    name: "*"
+    update_cache: yes
+    state: latest
+
+- name: Install packages
+  ansible.builtin.apt:
+    name: "{{ package_list_to_install }}"
+    update_cache: yes
+    state: latest
+
+- name: Romove packages
+  ansible.builtin.apt:
+    name: "{{ package_list_to_remove }}"
+    state: absent
