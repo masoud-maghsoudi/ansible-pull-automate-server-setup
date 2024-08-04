@@ -1,5 +1,6 @@
 ---
-- hosts: 127.0.0.1
+- name: Task and Roles that run by ansible-pull
+  hosts: 127.0.0.1
   connection: local
   become: true
   tasks:
