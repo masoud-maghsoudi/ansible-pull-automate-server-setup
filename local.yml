@@ -4,5 +4,6 @@
   connection: local
   become: true
   tasks:
-    - ansible.builtin.import_role:
+    - name: Import ansile roles to run by ansible-pull
+      ansible.builtin.import_role:
         name: package-manage
