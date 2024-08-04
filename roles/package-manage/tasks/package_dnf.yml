@@ -1,20 +1,20 @@
 - name: Install epel-release
   ansible.builtin.yum:
     name: "epel-release"
-    update_cache: yes
+    update_cache: true
     state: latest
   when: ansible_distribution != "Fedora"
 
 - name: Update all packages to their latest version
   ansible.builtin.dnf:
     name: "*"
-    update_cache: yes
+    update_cache: true
     state: latest
 
 - name: Install ansible
   ansible.builtin.dnf:
     name: "{{ package_list_to_install }}"
-    update_cache: yes
+    update_cache: true
     state: latest
 
 - name: Remove ansible
