@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  become: yes
+  become: true
   tasks:
     - name: Run ansible roles
       ansible.builtin.import_role:
@@ -12,4 +12,4 @@
         special_time: daily
         user: root
         job: "ansible-pull --url https://github.com/masoud-maghsoudi/ansible-pull-automate-server-setup.git"
-        backup: yes
+        backup: true
