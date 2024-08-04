@@ -1,6 +1,7 @@
+---
 galaxy_info:
   author: Masoud Maghsoudi
-  description: This ansible role helps to install Ansible on different Linux distributions. It can helps to run ansible-pull commands on servers later on.
+  description: This ansible role helps to install Ansible on different Linux distributions. It can help to run ansible-pull commands on servers later on.
 
   license: MIT
 
@@ -23,9 +24,9 @@ galaxy_info:
     - ansible
     - linux
     - redhat
-    - oracle_linux
-    - alma_linux
-    - rocky_linux
-    - centos_stream
+    - ol
+    - alma
+    - rocky
+    - centos
     - debian
-    - Ubuntu
+    - ubuntu

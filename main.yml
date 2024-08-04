@@ -1,6 +1,9 @@
 ---
-- hosts: all
-  become: yes
+- name: Install ansible and automate server setup using ansible-pull
+  hosts: all
+  become: true
+  vars:
+    pull_url: "https://github.com/masoud-maghsoudi/ansible-pull-automate-server-setup.git" # Repository URL to fetch and run ansible playbooks.
   tasks:
     - name: Run ansible roles
       ansible.builtin.import_role:
@@ -11,5 +14,5 @@
         name: "ansible-pull schedule"
         special_time: daily
         user: root
-        job: "ansible-pull --url https://github.com/masoud-maghsoudi/ansible-pull-automate-server-setup.git"
-        backup: yes
+        job: "ansible-pull --url ${{ pull_url }}"
+        backup: true
